@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sms_provider,sms.provider,model_sms_provider,,1,1,1,1
+access_sms_provider_user,access_sms_provider_user,model_sms_provider,,1,1,1,1
+access_sms_provider_number_user,access_sms_provider_number_user,model_sms_provider_number,,1,1,1,1
+sms_integration.access_sms_ir_provider,access_sms_ir_provider,sms_integration.model_sms_ir_provider,base.group_user,1,1,1,1
+sms_integration.access_sms_faraz_provider,access_sms_faraz_provider,sms_integration.model_sms_faraz_provider,base.group_user,1,1,1,1

@@ -1,0 +1,59 @@
+<!-- sms_integration/views/sms_provider_view.xml -->
+<odoo>
+    <record id="view_sms_provider_form" model="ir.ui.view">
+        <field name="name">sms.provider.form</field>
+        <field name="model">sms.provider</field>
+        <field name="arch" type="xml">
+            <form string="SMS Provider">
+                <sheet>
+                    <group string="Provider INFO">
+                        <field name="name"/>
+                        <field name="api_url"/>
+                        <field name="api_key"/>
+                    </group>
+                    <group string="Phone Numbers">
+                        <field name="phone_numbers">
+                            <tree>
+                                <field name="number"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_sms_provider_tree" model="ir.ui.view">
+        <field name="name">sms.provider.tree</field>
+        <field name="model">sms.provider</field>
+        <field name="arch" type="xml">
+            <tree string="SMS Providers">
+                <field name="name"/>
+                <field name="api_url"/>
+                <field name="api_key"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Action to open the SMS Provider form and tree views -->
+    <record id="action_sms_provider" model="ir.actions.act_window">
+        <field name="name">SMS Providers</field>
+        <field name="res_model">sms.provider</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+ <!-- negar-->
+
+    <record id="action_sms_panel" model="ir.actions.act_window">
+        <field name="name">SMS Messages</field>
+        <field name="res_model">sms.sms</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- Add a menu item -->
+    <menuitem id="menu_sms_provider_root" name="SMS Integration" sequence="1"/>
+    <menuitem id="menu_sms_provider" name="SMS Providers" parent="menu_sms_provider_root"
+              action="action_sms_provider"/>
+    <menuitem id="sms_panel" name=" SMS Panel" parent="menu_sms_provider_root" action="action_sms_panel"/>
+
+</odoo>

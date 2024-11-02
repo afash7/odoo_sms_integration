@@ -1,0 +1,28 @@
+<odoo>
+
+        <!-- Inherit the sms_composer_view_form -->
+       <record id="sms_composer_view_formsms_inherit" model="ir.ui.view">
+            <field name="name">sms.composer.form.inherit</field>
+            <field name="model">sms.composer</field>
+            <field name="inherit_id" ref="sms.sms_composer_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='body']" position="after">
+                    <field name="provider_id"/>
+                    <field name="provider_number_id" domain="[('provider_id', '=', provider_id)]" />
+                </xpath>
+            </field>
+        </record>
+<!-- Inherit the sms_tsms_view_form -->
+       <record id="sms_view_formtsms_inherit" model="ir.ui.view">
+            <field name="name">sms.sms.view.form.inherit</field>
+            <field name="model">sms.sms</field>
+            <field name="inherit_id" ref="sms.sms_tsms_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='body']" position="after">
+                    <field name="provider_id"/>
+                    <field name="provider_number_id" domain="[('provider_id', '=', provider_id)]"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>
+

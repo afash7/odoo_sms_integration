@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Form View for SMS Provider Number -->
+    <record id="view_sms_provider_number_form" model="ir.ui.view">
+        <field name="name">sms.provider.number.form</field>
+        <field name="model">sms.provider.number</field>
+        <field name="arch" type="xml">
+            <form string="SMS Provider Number">
+                <sheet>
+                    <group>
+                        <field name="number"/>
+                        <field name="provider_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View for SMS Provider Number -->
+    <record id="view_sms_provider_number_tree" model="ir.ui.view">
+        <field name="name">sms.provider.number.tree</field>
+        <field name="model">sms.provider.number</field>
+        <field name="arch" type="xml">
+            <tree string="SMS Provider Numbers">
+                <field name="number"/>
+                <field name="provider_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Define an action -->
+    <record id="action_sms_provider_number" model="ir.actions.act_window">
+        <field name="name">Provider Numbers</field>
+        <field name="res_model">sms.provider.number</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Add a menu item -->
+    <menuitem id="menu_sms_provider_number" name="Provider Numbers" parent="menu_sms_provider_root"
+              action="action_sms_provider_number"/>
+</odoo>
