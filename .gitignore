@@ -1,6 +1,7 @@
 # sphinx build directories
 _build/
 .vscode
+.ovnv
 # dotfiles
 .*
 !.gitignore
