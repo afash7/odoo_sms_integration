@@ -25,11 +25,11 @@ class FarazProvider(models.Model):
         _logger.info('Provider number: %s', send_number)
 
         # FarazSMS API URL
-        url = "https://api2.ippanel.com/api/v1/sms/send/webservice/single"
+        url = ""
 
         headers = {
             'accept': 'application/json',
-            'apikey': '-o7JcnNYQ0dkLlQma0S89SG1SqTfomMPcoVQWjH3sFw=',
+            'apikey': '',
             'Content-Type': 'application/json'
             }
         payload = json.dumps({

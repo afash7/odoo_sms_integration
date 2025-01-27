@@ -25,9 +25,9 @@ class SmsIrProvider(models.Model):
         _logger.info('provider_number %s', send_number)
         
 
-        url = "https://api.sms.ir/v1/send/bulk"
+        url = ""
         headers = {
-            'X-API-KEY': 'Cw3vEfMgOwQ1ZAVqS536W2FW7dDs2l71ww4OggGIqO9iD6P25ft8k7ZSgOnvdsAu',
+            'X-API-KEY': '',
             'Content-Type': 'application/json',
         }
         payload = json.dumps({
